@@ -65,7 +65,7 @@ func shortURLHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	shortURL := createURL(data.URL)
-	// fmt.Fprintf(w, shortURL)
+
 	reponse := struct {
 		ShortURL string `json:"short_url"`
 	}{ShortURL: shortURL}
@@ -85,9 +85,6 @@ func redirectHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	// fmt.Println("URL Shortener Service is running...")
-	// OriginalURL := "https://github.com/tor-tois"
-	// generateShortURL(OriginalURL)
 
 	// Registering Handlers
 	http.HandleFunc("/", handler)
